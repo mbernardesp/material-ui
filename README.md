@@ -1,2 +1,2 @@
-# material-ui
-React project using material-ui
+# material-ui-vite
+React project using material-ui-vite
