@@ -15,7 +15,8 @@ import ListItemText from '@mui/material/ListItemText';
 import TuneIcon from '@mui/icons-material/Tune';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
-import { useNavigate, useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useAppStore } from '../appStore';
 
 const drawerWidth = 240;
 
@@ -76,15 +77,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function Sidenav() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  //const [open, setOpen] = React.useState(true);
   const navigate = useNavigate();
+  const open = useAppStore((state) => state.dopen);
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
+      <Box height={30}/>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          <IconButton onClick={()=>setOpen(!open)}>
+          <IconButton>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
