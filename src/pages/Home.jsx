@@ -22,6 +22,16 @@ function Home() {
     padding: theme.spacing(2),
   }));
 
+  const TitleSpan = styled('span')({
+    color: 'white',
+    fontWeight: 'bold',
+  });
+
+  const BodySpan = styled('span')({
+    color: '#ccd1d1',
+    fontSize: '14px',
+  });
+
   const handleButtonClick = async () => {
     try {
       // Fazendo a requisição GET para a API
@@ -52,7 +62,7 @@ function Home() {
                       <div>
                         <CreditCardIcon sx={{ color: '#3A7ACD' }} />
                       </div>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white' }}>
                         $500.00
                       </Typography>
                       <Typography gutterBottom variant="body2" component="div" sx={{ color: "#ccd1d1" }}>
@@ -66,7 +76,7 @@ function Home() {
                       <div>
                         <ShoppingBagIcon sx={{ color: '#3A7ACD' }} />
                       </div>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography gutterBottom variant="h5" component="div" sx={{ color: 'white' }}>
                         $900.00
                       </Typography>
                       <Typography gutterBottom variant="body2" component="div" sx={{ color: "#ccd1d1" }}>
@@ -79,27 +89,27 @@ function Home() {
               </Grid>
               <Grid item xs={4}>
                 <Stack spacing={2}>
-                  <Card sx={{ maxWidth: 345, backgroundImage: 'linear-gradient(45deg, #4CAF50, #A8E6CF)' }}>
+                  <Card sx={{ backgroundImage: 'linear-gradient(45deg, #4CAF50, #A8E6CF)' }}>
                     <Stack spacing={2} direction={"row"}>
                       <div className='iconstyle'>
                         <StorefrontIcon sx={{ color: 'green' }} />
                       </div>
                       <div className='paddingall'>
-                        <span className='pricetitle'>$203k</span>
+                        <TitleSpan>$203k</TitleSpan>
                         <br />
-                        <span className='pricesubtitle'>Total Income</span>
+                        <BodySpan>Total Income</BodySpan>
                       </div>
                     </Stack>
                   </Card>
-                  <Card sx={{ maxWidth: 345, backgroundImage: 'linear-gradient(45deg, #4CAF50, #A8E6CF)' }}>
+                  <Card sx={{ backgroundImage: 'linear-gradient(45deg, #4CAF50, #A8E6CF)' }}>
                     <Stack spacing={2} direction={"row"}>
                       <div className='iconstyle'>
                         <StorefrontIcon sx={{ color: 'green' }} />
                       </div>
                       <div className='paddingall'>
-                        <span className='pricetitle'>$203k</span>
+                        <TitleSpan>$203k</TitleSpan>
                         <br />
-                        <span className='pricesubtitle'>Total Income</span>
+                        <BodySpan>Total Income</BodySpan>
                       </div>
                     </Stack>
                   </Card>
